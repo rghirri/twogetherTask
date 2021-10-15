@@ -11,8 +11,9 @@ class EmployeeData{
       $str = fgets($myfile);
       $employeeDateArray = explode(",",$str);
       $lineArray = array('name' => $employeeDateArray[0], 'birthDay' => isset($employeeDateArray[1]) ? $employeeDateArray[1] : null);
+      $employee = new CakeDay($lineArray['name'], $lineArray['birthDay']);
   
-      yield $lineArray;
+      yield $employee;
    
     
     }

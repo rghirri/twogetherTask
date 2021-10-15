@@ -7,15 +7,12 @@ require "./classes/CakeDay.php";
 
 require "./classes/EmployeeData.php";
 
+
 $fileName = 'employee-birthdates.txt';
 
 $lineGenerator = EmployeeData::getEmployeeData($fileName);
-$dayMonthGenerator = 
 foreach ($lineGenerator as $line) {
-  $employee = new CakeDay($line['name'], $line['birthDay']);
-  $name = $employee->name;
-  $birthDate = $birthDate->birthDay;
-  $employeeBirthDayMath = $employee->BirthdayMatch($name, $birthDate);
-  var_dump($employeeBirthDayMath);
+  $employeeBirthDayMath = $line->CakeDayCalculate($line);
+  echo $employeeBirthDayMath. '</br>';
 
 }
